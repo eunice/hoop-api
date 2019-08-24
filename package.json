@@ -1,0 +1,48 @@
+{
+  "name": "hoop-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -w src --exec babel-node src/server.js",
+    "test": "export NODE_ENV='test'; mocha --require @babel/register **/**/*.test.js test/setup.js --exit",
+    "prebuild": "rm -rf dist/*",
+    "build": "babel -d ./dist ./src",
+    "start": "NODE_ENV=production node dist/server.js"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.47",
+    "@babel/polyfill": "^7.0.0-beta.47",
+    "@babel/register": "^7.0.0-beta.46",
+    "@google-cloud/storage": "^2.0.0",
+    "bcrypt": "^2.0.1",
+    "debug": "^3.1.0",
+    "dotenv": "^5.0.1",
+    "joi": "^13.3.0",
+    "knex": "^0.14.6",
+    "knex-cleaner": "^1.1.4",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compress": "^3.0.0",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "lodash.snakecase": "^4.1.1",
+    "objection": "^1.1.9",
+    "pg": "^7.4.3",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/node": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/runtime": "^7.0.0-beta.47",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "chai-uuid": "^1.0.6",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.3"
+  }
+}
