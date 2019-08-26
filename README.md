@@ -7,6 +7,7 @@
 * `npm -g install yarn`
 * `yarn instal`
 * Set up your .env file
+* Create postgres databases `hoop_dev` and `hoop_test`
 * `knex migrate:latest`
 * `npm run dev`
 * navigate to `localhost:8080`
