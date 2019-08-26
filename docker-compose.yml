@@ -1,0 +1,37 @@
+version: '2'
+services:
+  api:
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    environment:
+      database_url: 'postgresql://postgres:postgres@localhost:5432/hoop_dev?sslmode=disable'
+      test_database_url: 'postgresql://postgres:postgres@localhost:5432/hoop_test?sslmode=disable'
+      use_docker_dns: 'true'
+    command: ["yarn", "dev"]
+
+  postgres:
+    build:
+      context: ./docker
+      dockerfile: postgres.dockerfile
+    volumes:
+      - postgresdb:/var/lib/postgresql/data
+
+  nginx:
+    build:
+      context: ./docker
+      dockerfile: nginx.dockerfile
+    restart: always
+    ports:
+        - "8080:8080"
+    depends_on:
+        - api
+
+volumes:
+  postgresdb:
+    driver: local
