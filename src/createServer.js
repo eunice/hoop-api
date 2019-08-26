@@ -4,6 +4,8 @@ import koaBody from 'koa-bodyparser'
 import compress from 'koa-compress'
 import logger from 'koa-logger'
 import session from 'koa-session'
+import users from './api/users'
+
 
 // Load env variables
 require('dotenv').config()
@@ -34,7 +36,8 @@ export default function createServer(PORT) {
     ctx.body = "Hello World!"
   })
 
-  app.use(session(CONFIG, app));
+  // app.use(session(CONFIG, app));
+  app.use(users.routes())
   app.use(router.routes())
   app.use(router.allowedMethods())
 

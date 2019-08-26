@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   api:
     build: .
@@ -18,14 +18,14 @@ services:
   postgres:
     build:
       context: ./docker
-      dockerfile: postgres.dockerfile
+      dockerfile: postgres.Dockerfile
     volumes:
       - postgresdb:/var/lib/postgresql/data
 
   nginx:
     build:
       context: ./docker
-      dockerfile: nginx.dockerfile
+      dockerfile: nginx.Dockerfile
     restart: always
     ports:
         - "8080:8080"

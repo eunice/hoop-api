@@ -27,6 +27,7 @@
     "koa-jwt": "^3.6.0",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
     "lodash.snakecase": "^4.1.1",
     "objection": "^1.1.9",
     "pg": "^7.4.3",

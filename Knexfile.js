@@ -1,4 +1,4 @@
-TABASE_URL, DATABASE_URL;
+var DATABASE_URL, DATABASE_URL;
 if (process.env.USE_DOCKER_DNS == 'true') {
   DATABASE_URL = 'postgresql://postgres:postgres@postgres:5432/hoop_dev?ssl_mode=disable'
   TEST_DATABASE_URL = 'postgresql://postgres:postgres@postgres:5432/hoop_test?ssl_mode=disable'

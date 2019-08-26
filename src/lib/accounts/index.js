@@ -19,6 +19,7 @@ export default class Accounts {
     }
 
     let user_res = await User.query().insert(user)
+    return user_res
   }
 
   static async login(email, password) {

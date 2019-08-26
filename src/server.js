@@ -1,3 +1,3 @@
 import createServer from './createServer.js'
 
-createServer(5000, 'SHAREDSECRET')
+createServer(5000)
