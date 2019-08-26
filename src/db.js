@@ -11,7 +11,7 @@ if (process.env.USE_DOCKER_DNS == 'true') {
 }
 
 if (process.env.NODE_ENV == 'test') {
-  DATABASE_URL = 'postgresql://postgres:postgres@postgres:5432/hoop_test?ssl_mode=disable'
+  DATABASE_URL = 'postgresql://postgres:postgres@localhost:5432/hoop_test?ssl_mode=disable'
 }
 
 
